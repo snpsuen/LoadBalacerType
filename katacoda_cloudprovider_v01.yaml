@@ -100,10 +100,14 @@ spec:
           requests:
             cpu: 200m
         livenessProbe:
-          httpGet:
-            path: /healthz
-            port: 10252
-            host: 0.0.0.0
+          # httpGet:
+            # path: /healthz
+            # port: 10252
+            # host: 127.0.0.1
+          exec:
+            command:
+            - ls
+            - /etc/ssl/certs
           initialDelaySeconds: 15
           timeoutSeconds: 15
           failureThreshold: 8
