@@ -106,8 +106,8 @@ spec:
             # host: 127.0.0.1
           exec:
             command:
-            - ls
-            - /etc/ssl/certs
+            - touch
+            - /tmp/healthy
           initialDelaySeconds: 15
           timeoutSeconds: 15
           failureThreshold: 8
