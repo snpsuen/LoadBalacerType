@@ -36,11 +36,11 @@ spec:
                 fieldRef:
                   fieldPath: metadata.namespace
           # to use unicast
-          args:
-          - --services-configmap=kube-system/vip-configmap
+          # args:
+          # - --services-configmap=kube-system/vip-configmap
           # unicast uses the ip of the nodes instead of multicast
           # this is useful if running in cloud providers (like AWS)
-          - --use-unicast=true
+          # - --use-unicast=true
       volumes:
         - name: modules
           hostPath:
