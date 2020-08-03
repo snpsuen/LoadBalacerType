@@ -40,7 +40,7 @@ spec:
           - --services-configmap=kube-system/vip-configmap
           # unicast uses the ip of the nodes instead of multicast
           # this is useful if running in cloud providers (like AWS)
-          - --use-unicast=true
+          # - --use-unicast=true
           # - "modprobe"
           # - "ip_vs"
           
