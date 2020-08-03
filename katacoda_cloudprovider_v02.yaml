@@ -13,7 +13,7 @@ spec:
         name: kube-keepalived-vip
     spec:
       hostNetwork: true
-      serviceAccount: kube-keepalived-vip
+      # serviceAccount: kube-keepalived-vip
       containers:
         - image: gcr.io/google_containers/kube-keepalived-vip:0.9
           name: kube-keepalived-vip
