@@ -49,8 +49,8 @@ spec:
         - name: dev
           hostPath:
             path: /dev
-      nodeSelector:
-        type: worker
+      # nodeSelector:
+        # type: worker
 ---
 ## We also create an empty ConfigMap to hold our config
 apiVersion: v1
