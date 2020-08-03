@@ -41,9 +41,6 @@ spec:
           # unicast uses the ip of the nodes instead of multicast
           # this is useful if running in cloud providers (like AWS)
           # - --use-unicast=true
-          # - "modprobe"
-          # - "ip_vs"
-          
       volumes:
         - name: modules
           hostPath:
