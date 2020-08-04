@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: kube-keepalived-vip
+  namespace: kube-system
 spec:
   selector:
     matchLabels:
@@ -59,7 +60,7 @@ metadata:
   name: vip-configmap
   namespace: kube-system
 data:
-  192.168.1.111: default
+  192.168.1.111: default/loadbalancer-service
 ---
 apiVersion: apps/v1
 kind: Deployment
