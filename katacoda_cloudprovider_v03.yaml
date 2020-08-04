@@ -13,6 +13,7 @@ spec:
         name: kube-keepalived-vip
     spec:
       hostNetwork: true
+      serviceAccount: kube-keepalived-vip      
       containers:
         - image: k8s.gcr.io/kube-keepalived-vip:0.11
           name: kube-keepalived-vip
@@ -60,7 +61,7 @@ metadata:
   name: vip-configmap
   namespace: kube-system
 data:
-  192.168.1.111: default/loadbalancer-service
+  # 192.168.1.111: default/loadbalancer-service
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -95,7 +96,7 @@ spec:
         - name: KEEPALIVED_CONFIG_MAP
           value: vip-configmap
         - name: KEEPALIVED_SERVICE_CIDR
-          value: 10.10.0.0/26 # pick a CIDR that is explicitly reserved for keepalived
+          value: 192.168.1.48/28 # pick a CIDR that is explicitly reserved for keepalived
         volumeMounts:
         - name: certs
           mountPath: /etc/ssl/certs
